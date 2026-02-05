@@ -15,7 +15,7 @@ def login():
     if usernameentry.get()=="" or passwordentry.get()=="" :
         messagebox.showerror('ERROR','INSERT ALL DETAILS')
     else:
-        myconn=mysql.connector.connect(host="localhost",user="root",passwd="2952007",database="school_project",auth_plugin="mysql_native_password")
+        myconn=mysql.connector.connect(host="localhost",user="root",passwd="291516",database="clg_project",auth_plugin="mysql_native_password")
         c=myconn.cursor(buffered=True)
        
         uname=usernameentry.get()
@@ -23,7 +23,7 @@ def login():
          
 
 
-        query = "SELECT username ,password FROM login  WHERE username = %s and password=%s"
+        query = "SELECT username ,password FROM users  WHERE username = %s and password=%s"
         c.execute(query, [(uname),(passw)])
        
         ce=c.fetchall()

@@ -10,13 +10,13 @@ from tkinter import messagebox
 
 def signup():
     
-    if usernameEntry.get()=="" or passwordEntry.get()=="" or phoneEntry.get()=="":
+    if usernameEntry.get()=="" or passwordEntry.get()=="" :
         messagebox.showerror('ERROR','INSERT ALL DETAILS')
     else:
-        myconn=mysql.connector.connect(host="localhost",user="root",passwd="2952007",database="school_project",auth_plugin="mysql_native_password")
+        myconn=mysql.connector.connect(host="localhost",user="root",passwd="291516",database="clg_project",auth_plugin="mysql_native_password")
         c=myconn.cursor(buffered=True)
-        query="INSERT INTO LOGIN (username,password,phone_no) VALUES (%s,%s,%s)"
-        c.execute(query,(usernameEntry.get(),passwordEntry.get(),phoneEntry.get()))
+        query="INSERT INTO users (username,password) VALUES (%s,%s)"
+        c.execute(query,(usernameEntry.get(),passwordEntry.get()))
         myconn.commit()
         myconn.close()
         messagebox.showinfo('success','successful')
@@ -67,11 +67,7 @@ passwordEntry.place(x=980,y=325)
 frame2=Frame(signup_window,bg='black',width=435,height=2).place(x=980,y=355)
 
 
-phonelabel=Label(signup_window,text="PHONE NO.",font=("Times",20,"bold"),bg="white",fg="black")
-phonelabel.place(x=980,y=410)
-phoneEntry=Entry(signup_window,width=31,font=("Times",20,"bold"),fg="black",bd=0)
-phoneEntry.place(x=980,y=450)
-frame3=Frame(signup_window,bg='black',width=435,height=2).place(x=980,y=480)
+
 
 # BUTTONS
 

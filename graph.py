@@ -15,7 +15,7 @@ def BUY():
 
 #connecting mysql and python
 
-mycon=sqltor.connect(host="localhost", user="root", passwd="2952007", database="school_project",auth_plugin="mysql_native_password")
+mycon=sqltor.connect(host="localhost", user="root", passwd="291516", database="clg_project",auth_plugin="mysql_native_password")
 if mycon.is_connected():
       reliance_monthly=pd.read_sql("select*from reliance_monthly",mycon)
       tata_monthly=pd.read_sql("select*from tata_monthly",mycon)

@@ -71,7 +71,7 @@ def buy():
              cmpny=menu1.get()
              cur=curprice
            
-             mycon=sqltor.connect(host="localhost", user="root", passwd="2952007", database="school_project",auth_plugin="mysql_native_password")
+             mycon=sqltor.connect(host="localhost", user="root", passwd="291516", database="clg_project",auth_plugin="mysql_native_password")
              c=mycon.cursor(buffered=True)
              query="INSERT INTO buy (username,password,company,priceperunit,qty,amntpaid,date) VALUES (%s,%s,%s,%s,%s,%s,(curdate()))"
             
@@ -85,16 +85,16 @@ def buy():
 
 
 # taking data for the graph
-mycon=sqltor.connect(host="localhost", user="root", passwd="2952007", database="school_project",auth_plugin="mysql_native_password")
+mycon=sqltor.connect(host="localhost", user="root", passwd="291516", database="clg_project",auth_plugin="mysql_native_password")
 mycursor = mycon.cursor()
 if mycon.is_connected():
-     reliance4_weekly=pd.read_sql("select*from reliance_weekly where date>'2023-03-27'",mycon)
-     tata4_weekly=pd.read_sql("select*from tata_weekly where date>'2023-03-27'",mycon)
-     adani4_weekly=pd.read_sql("select*from adani_weekly where date>'2023-03-27'",mycon)
-     hdfc4_weekly=pd.read_sql("select*from hdfc_weekly where date>'2023-03-27'",mycon)
-     infosys4_weekly=pd.read_sql("select*from infosys_weekly where date>'2023-03-27'",mycon)
-     itc4_weekly=pd.read_sql("select*from itc_weekly where date>'2023-03-27'",mycon)
-     sbi4_weekly=pd.read_sql("select*from sbi_weekly where date>'2023-03-27'",mycon)
+     reliance4_weekly=pd.read_sql("select*from reliance_weekly where date>'2025-03-27'",mycon)
+     tata4_weekly=pd.read_sql("select*from tata_weekly where date>'2025-03-27'",mycon)
+     adani4_weekly=pd.read_sql("select*from adani_weekly where date>'2025-03-27'",mycon)
+     hdfc4_weekly=pd.read_sql("select*from hdfc_weekly where date>'2025-03-27'",mycon)
+     infosys4_weekly=pd.read_sql("select*from infosys_weekly where date>'2025-03-27'",mycon)
+     itc4_weekly=pd.read_sql("select*from itc_weekly where date>'2025-03-27'",mycon)
+     sbi4_weekly=pd.read_sql("select*from sbi_weekly where date>'2025-03-27'",mycon)
      
      
 #making graph from data 
